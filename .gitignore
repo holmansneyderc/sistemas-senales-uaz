@@ -1,0 +1,51 @@
+# Node directories
+client/node_modules/
+
+# Python
+*.pyc
+*.pyo
+*.pyd
+.Python
+db.sqlite3
+*.sqlite3
+.env
+venv/**
+
+# Flask
+instance/
+.webassets-cache
+
+# Vue build output
+client/dist/
+client/build/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDEs and editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+*.bak
+
+# Logs
+logs
+*.log
+npm-debug.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Virtual Environment
+venv/
