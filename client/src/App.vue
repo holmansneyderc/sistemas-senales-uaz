@@ -3,26 +3,25 @@
     <v-layout>
       <!-- Barra superior con tu nombre, materia y logo de la universidad -->
       <v-app-bar app color="gray">
-        <!-- Logo de la universidad (ajusta la URL de la imagen según sea necesario) -->
-        <v-img src="@/assets/holman.png" max-height="40" class="mr-4"></v-img>
+        <v-row no-gutters>
+          <!-- Columna de texto -->
+          <v-col cols="8" class="pl-4 pr-4 d-flex align-center"> <!-- Añadido d-flex y align-center -->
+            <div class="caption">Señales y sistemas</div>
+          </v-col>
 
-        <!-- Texto con tu nombre y el nombre de la materia con padding -->
-        <div class="pr-4"> <!-- Agrega un padding a la izquierda (por ejemplo, 4 unidades) -->
-          <div class="caption">Señales y sistemas</div>
-        </div>
+          <!-- Columna de logo -->
+          <v-col cols="4" class="d-flex justify-end"> <!-- Ajustado a 4 y agregado text-end para alinear a la derecha -->
+            <v-img  class="pl-4" src="@/assets/logo.png" max-height="40" max-width="80" width="auto"></v-img> <!-- Añadido width="auto" -->
+          </v-col>
+        </v-row>
       </v-app-bar>
 
+
       <!-- Menú lateral plegable -->
-      <v-navigation-drawer
-        expand-on-hover
-        rail
-      >
+      <v-navigation-drawer expand-on-hover rail>
         <v-list>
-          <v-list-item
-            prepend-avatar="@/assets/holman.png"
-            title="Holman Cabezas"
-            subtitle="holmanc@uaz.edu.mx"
-          ></v-list-item>
+          <v-list-item prepend-avatar="@/assets/holman.png" title="Holman Cabezas"
+            subtitle="holmanc@uaz.edu.mx"></v-list-item>
         </v-list>
 
         <v-divider></v-divider>
@@ -35,7 +34,7 @@
       </v-navigation-drawer>
 
       <!-- Contenido de la página -->
-      <v-main style="height: 250px">
+      <v-main class="flex-grow-1 width-100">
         <router-view />
       </v-main>
     </v-layout>
