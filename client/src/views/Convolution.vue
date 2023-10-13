@@ -1,36 +1,31 @@
 <template>
   <v-card class="fill-height">
     <v-layout fill-height>
-      <v-navigation-drawer
-        permanent
-        location="right"
-      >
+      <v-navigation-drawer permanent location="right">
         <v-list density="compact" nav>
           <v-list-item>
-            <v-select
-              :items="options"
-              label="Tipo de señal"
-              outlined
-              v-model="selectedOption"
-            ></v-select>
+            <v-select :items="options" label="Tipo de señal" outlined v-model="selectedOption"></v-select>
           </v-list-item>
           <v-list-item-group v-if="selectedOption === 'Señal continua'">
             <v-list-item>
               <v-list-item-content>
-                <v-list-item-title>Titulo Señal Continua</v-list-item-title>
-                <v-select
-                  :items="optionsContinue"
-                  label="Parametros de entrada"
-                  outlined
-                  v-model="selectedOptionContinue"
-                ></v-select>
+                <v-list-item-title>Señal Continua</v-list-item-title>
+                <v-select :items="optionsContinue" label="Parametros de entrada" outlined
+                  v-model="selectedOptionContinue"></v-select>
               </v-list-item-content>
             </v-list-item>
           </v-list-item-group>
           <v-list-item-group v-else-if="selectedOption === 'Señal discreta'">
             <v-list-item>
               <v-list-item-content>
-                <v-list-item-title>Titulo Señal Discreta</v-list-item-title>
+                <v-list-item-title>Señal Discreta</v-list-item-title>
+                Una señal discreta es una función matemática que es definida o es significativa
+                solamente en un conjunto discreto de puntos. La señal puede o no ser periódica,
+                pero el conjunto de puntos donde la señal es definida o significativa es discreto.
+                <br>
+                <br>
+                Por favor, introduzca los datos para las señales <b>x[n]</b> y <b>h[n]</b> para
+                realizar operaciones o análisis en la señal discreta.
               </v-list-item-content>
             </v-list-item>
             <!-- ... cualquier otro contenido para Señal Discreta ... -->
@@ -39,10 +34,8 @@
       </v-navigation-drawer>
       <v-main style="min-height: 250px; width: 100%">
         <!-- Componente para Señal Continua -->
-        <ContinuousComponent
-          v-if="selectedOption === 'Señal continua'"
-          :selectedOptionContinue="selectedOptionContinue"
-        />
+        <ContinuousComponent v-if="selectedOption === 'Señal continua'"
+          :selectedOptionContinue="selectedOptionContinue" />
 
         <!-- Componente para Señal Discreta -->
         <DiscreteComponent v-else />
@@ -68,7 +61,7 @@ export default defineComponent({
     const optionsContinue = ref(['Criterios de existencia', 'funciones']);
 
     const selectedOption: Ref<string | null> = ref(null);
-const selectedOptionContinue: Ref<string | null> = ref(null);
+    const selectedOptionContinue: Ref<string | null> = ref(null);
 
     const router = useRouter();
     const route = useRoute();

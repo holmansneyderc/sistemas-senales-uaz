@@ -3,14 +3,14 @@
     <v-row class="equal-height">
       <v-col cols="6" class="d-flex align-stretch">
         <v-card flat class="flex">
-          <v-card-title>h[n]</v-card-title>
-          <UnitImpulse :impulseData="impulseDataLeft" :edit="true" @updateData="updateImpulseData(impulseDataLeft)"/>
+          <v-card-title>x[n]</v-card-title>
+          <UnitImpulse :impulseData="impulseDataRight" :edit="true" @updateData="updateImpulseData(impulseDataRight)"/>
         </v-card>
       </v-col>
       <v-col cols="6" class="d-flex align-stretch">
         <v-card flat class="flex">
-          <v-card-title>x[n]</v-card-title>
-          <UnitImpulse :impulseData="impulseDataRight" :edit="true" @updateData="updateImpulseData(impulseDataRight)"/>
+          <v-card-title>h[n]</v-card-title>
+          <UnitImpulse :impulseData="impulseDataLeft" :edit="true" @updateData="updateImpulseData(impulseDataLeft)"/>
         </v-card>
       </v-col>
     </v-row>

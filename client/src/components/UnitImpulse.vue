@@ -1,6 +1,6 @@
 <template>
   <v-container style="width: 100%;">
-    <v-row class="pa-14">
+    <v-row :class="edit ? 'pa-5' : 'pa-14'">
       <v-col cols="12" :md="edit ? '4' : '12'" v-if="edit">
 
         <div>
@@ -11,7 +11,7 @@
                 <th>n</th>
                 <th>Amplitud</th>
                 <th> 
-                  <v-btn @click="addRow"><v-icon small>mdi-plus</v-icon></v-btn>
+                  <v-btn @click="addRow" color="primary"><v-icon small>mdi-plus</v-icon></v-btn>
                 </th>
               </tr>
             </thead>
