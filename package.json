@@ -1,0 +1,11 @@
+{
+  "name": "sistemas-senales-uaz",
+  "version": "1.0.0",
+  "description": "--- title: Flask description: A popular minimal server framework for Python tags:   - python   - flask ---",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
