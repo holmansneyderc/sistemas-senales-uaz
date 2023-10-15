@@ -51,7 +51,7 @@ const updateImpulseData = (newData, data) => {
 // Método para llamar al servicio
 const calculate = async () => {
   try {
-    const response = await axios.post('http://localhost:5000/convolve', {
+    const response = await axios.post('https://sistemas-senales-uaz-production.up.railway.app/convolve', {
       impulseDataLeft: impulseDataLeft.value,
       impulseDataRight: impulseDataRight.value
     });

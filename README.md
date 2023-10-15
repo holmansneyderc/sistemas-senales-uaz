@@ -1,23 +1,35 @@
----
-title: Flask
-description: A popular minimal server framework for Python
-tags:
-  - python
-  - flask
----
+# UAZ SEÑALES Y SISTEMAS
 
-# Python Flask Example
+Plataforma en línea para el cálculo y visualización de operaciones matemáticas avanzadas relacionadas con las señales y sistemas. Ya sea que seas un estudiante, un ingeniero o simplemente un entusiasta, estamos aquí para ayudarte a entender y calcular con precisión.
 
-This is a [Flask](https://flask.palletsprojects.com/en/1.1.x/) app that serves a simple JSON response.
+🌀 Convolución: Introduce tus funciones y visualiza el resultado de su convolución, un proceso que describe cómo se modifica una función por otra función.
 
-[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/zUcpux)
+🌌 Transformada de Fourier: Convierte tus señales del dominio del tiempo al dominio de la frecuencia y descubre los componentes de frecuencia que componen tus señales.
 
-## ✨ Features
+🎶 Series de Fourier: Descompón tus señales periódicas en una suma infinita de senos y cosenos, permitiéndote analizar y reconstruir señales desde sus componentes básicos.
 
-- Python
-- Flask
 
-## 💁‍♀️ How to use
 
-- Install Python requirements `pip install -r requirements.txt`
-- Start the server for development `python3 main.py`
+![Convolucion continua](images/convolucion-discreta.png)
+
+## Información General
+
+- **URL del proyecto:** [Click aquí](https://sistemas-senales-uaz-production.up.railway.app/)
+- **Autor:** Holman Sneyder Cabezas Mondragon
+- **Materia:** Maestria en ciencias del procesamiento de la informacion
+- **Universidad:** UAZ
+
+## Comenzando
+
+Estas instrucciones te permitirán obtener una copia del proyecto en tu máquina local para propósitos de desarrollo y pruebas.
+
+### Prerequisitos
+
+- Python (versión especificada)
+- Node.js y NPM
+
+### Instalación de Dependencias
+
+1. **Python:**
+   ```bash
+   pip install -r requirements.txt
