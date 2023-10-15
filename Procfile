@@ -1,1 +1,1 @@
-web: cd client && npm run build && gunicorn main:app
+web: cd client && npm run build --omit=dev && gunicorn main:app
