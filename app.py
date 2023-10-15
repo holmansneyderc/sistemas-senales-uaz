@@ -1,9 +1,12 @@
-from flask import Flask, request, jsonify
+
+
+from flask import Flask, send_from_directory, request, jsonify
 from flask_cors import CORS
 import numpy as np
+import os
 
-app = Flask(__name__)
-CORS(app)  # Esto habilita CORS para toda la aplicación
+app = Flask(__name__, static_folder='build')
+
 
 @app.route('/convolve', methods=['POST'])
 def convolve():
@@ -19,6 +22,16 @@ def convolve():
 
     except Exception as e:
         return jsonify(error=str(e)), 400
+    
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def catch_all(path):
+    if path != "" and os.path.exists("build/" + path):
+        return send_from_directory(app.static_folder, path)
+    else:
+        return send_from_directory(app.static_folder, 'index.html')
+
+
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=os.getenv("PORT", default=5000))
