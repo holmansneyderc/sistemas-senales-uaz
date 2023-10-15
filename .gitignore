@@ -55,7 +55,6 @@ venv/
 # Ignorar directorios generados
 node_modules/
 dist/
-build/
 .cache/
 
 # Ignorar archivos de configuración locales
@@ -90,7 +89,6 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-build/
 develop-eggs/
 dist/
 downloads/
