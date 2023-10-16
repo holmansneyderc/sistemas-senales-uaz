@@ -10,7 +10,8 @@ Plataforma en línea para el cálculo y visualización de operaciones matemátic
 
 
 
-![Convolucion continua](images/convolucion-discreta.png)
+![Convolucion discreta](images/convolucion-discreta.png)
+![Convolucion continua](images/convolucion-continua.png)
 
 ## Información General
 
