@@ -11,3 +11,4 @@ numpy>=1.18.0,<1.25.0
 packaging==23.2
 Werkzeug==3.0.0
 zipp==3.17.0
+sympy==1.12
