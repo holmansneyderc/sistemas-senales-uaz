@@ -1,0 +1,1 @@
+import{d as e,r as p,o as t,c as o,w as a,a as r,V as u}from"./index-7b0dffc4.js";import{V as l}from"./VApp-314b2123.js";const m=e({__name:"View",setup(n){return(_,s)=>{const c=p("router-view");return t(),o(u,null,{default:a(()=>[r(c)]),_:1})}}}),d=e({__name:"Default",setup(n){return(_,s)=>(t(),o(l,null,{default:a(()=>[r(m)]),_:1}))}});export{d as default};
