@@ -9,8 +9,9 @@ Plataforma en línea para el cálculo y visualización de operaciones matemátic
 🎶 Series de Fourier: Descompón tus señales periódicas en una suma infinita de senos y cosenos, permitiéndote analizar y reconstruir señales desde sus componentes básicos.
 
 
-
+## Convolucion discreta
 ![Convolucion discreta](images/convolucion-discreta.png)
+## Convolucion continua
 ![Convolucion continua](images/convolucion-continua.png)
 
 ## Información General
