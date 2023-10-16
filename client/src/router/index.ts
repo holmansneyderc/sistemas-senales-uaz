@@ -6,6 +6,11 @@ const routes = [
     component: () => import('@/layouts/default/Default.vue'),
     children: [
       {
+        path: '',
+        name: 'Home',
+        component: () => import(/* webpackChunkName: "convolucion" */ '@/views/Home.vue'),
+      },
+      {
         path: 'convolucion-discreta',
         name: 'convolucion discreta',
         component: () => import(/* webpackChunkName: "convolucion" */ '@/views/Convolution.vue'),

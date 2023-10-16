@@ -51,12 +51,12 @@ const updateImpulseData = (newData, data) => {
 // Método para llamar al servicio
 const calculate = async () => {
   try {
-    const response = await axios.post('https://sistemas-senales-uaz-production.up.railway.app/convolve', {
+    const response = await axios.post(`${import.meta.env.VITE_API_URL}/convolve`, {
       impulseDataLeft: impulseDataLeft.value,
       impulseDataRight: impulseDataRight.value
     });
     convolutionResult.value = response.data;
-    componentKey.value = Date.now();  // Forzar la actualización del componente hijo
+    componentKey.value = Date.now(); 
 
   } catch (error) {
     console.error('Hubo un error al llamar al servicio:', error);

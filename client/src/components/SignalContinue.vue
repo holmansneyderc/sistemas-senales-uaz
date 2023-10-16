@@ -1,32 +1,38 @@
 <template>
-    <v-app>
-      <v-container>
-        <v-row>
-          <v-col cols="12">
-            <v-text-field v-model="funcStr" label="Función" placeholder="Inserta tu función"></v-text-field>
-          </v-col>
-          <v-col cols="12">
-            <v-btn @click="graphFunction" color="primary">Graficar</v-btn>
-            <div id="graph"></div>
-          </v-col>
-        </v-row>
-      </v-container>
-    </v-app>
+    <v-container>
+      <v-row>
+        <v-col cols="12">
+          <v-text-field v-model="funcStr" label="Función" placeholder="Inserta tu función"></v-text-field>
+        </v-col>
+        <v-col cols="12">
+          <v-btn @click="graphFunction" color="primary">Graficar</v-btn>
+          <div :id="'graph_' + instanceId"></div>
+        </v-col>
+      </v-row>
+    </v-container>
 </template>
 
 
+
 <script>
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, getCurrentInstance } from 'vue';
 import * as d3 from 'd3';
 
 export default {
-  setup() {
-    const funcStr = ref('x*x'); // valor inicial
+  props: {
+    formData: String, // Propiedad para recibir los datos desde el componente padre
+  },
+  setup(props) {
+    const funcStr = ref('x'); // Valor inicial: función x
+    const instance = getCurrentInstance(); // Obtén la instancia actual
+    const instanceId = instance.uid; // Crea un identificador único para esta instancia
+    const textInput = ref(''); // Valor del campo de entrada de texto
 
     const graphFunction = () => {
       try {
-        const func = new Function('x', 'return ' + funcStr.value);
-        drawGraph(func);
+        funcStr.value = props.formData; // Establece la función desde formData
+        const func = new Function('x', `return ${funcStr.value}`);
+        drawGraph(func, instanceId); // Pasa el identificador único
       } catch (e) {
         console.error('Error en la función ingresada: ', e);
       }
@@ -34,13 +40,14 @@ export default {
 
     onMounted(() => {
       graphFunction(); // Dibuja un gráfico en el montaje con la función inicial
+      textInput.value = ''; // Establece el valor inicial del campo de entrada de texto en blanco
     });
 
-    return { funcStr, graphFunction };
+    return { funcStr, graphFunction, instanceId, textInput };
   },
 };
 
-function drawGraph(func) {
+function drawGraph(func, instanceId) {
   const margin = { top: 20, right: 20, bottom: 50, left: 50 },
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
@@ -57,12 +64,13 @@ function drawGraph(func) {
     const xi = x.invert(i);
     return [xi, func(xi)];
   });
+  const graphId = `graph_${instanceId}`;
 
-  d3.select("#graph")
+  d3.select(`#${graphId}`)
     .selectAll("*")
     .remove();
 
-  const svg = d3.select("#graph")
+  const svg = d3.select(`#${graphId}`)
     .append("svg")
     .attr("width", width + margin.left + margin.right)
     .attr("height", height + margin.top + margin.bottom)
