@@ -16,7 +16,7 @@ Plataforma en línea para el cálculo y visualización de operaciones matemátic
 
 ## Información General
 
-- **URL del proyecto:** [Click aquí](https://sistemas-senales-uaz-production.up.railway.app/)
+- **URL del proyecto: https://sistemas-senales-uaz-production.up.railway.app** [Click aquí](https://sistemas-senales-uaz-production.up.railway.app/)
 - **Autor:** Holman Sneyder Cabezas Mondragon
 - **Materia:** Maestria en ciencias del procesamiento de la informacion
 - **Universidad:** UAZ
